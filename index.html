@@ -7,26 +7,26 @@
   <meta name="description" content="A private test website with an embedded PDF viewer.">
   <style>
     :root {
-      --bg: #f6f7fb;
+      --bg: #fdf5f5;
       --surface: #ffffff;
-      --text: #151823;
-      --muted: #5d6475;
-      --border: #e4e7ef;
-      --accent: #4f46e5;
-      --accent-2: #06b6d4;
+      --text: #2a1517;
+      --muted: #7a5c5f;
+      --border: #f0dcdd;
+      --accent: #dc2626;
+      --accent-2: #fb7185;
       --accent-text: #ffffff;
-      --shadow: 0 10px 30px rgba(20, 24, 50, .08);
+      --shadow: 0 10px 30px rgba(120, 20, 30, .10);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0d0f17;
-        --surface: #161a26;
-        --text: #eef0f7;
-        --muted: #9aa2b6;
-        --border: #262b3b;
-        --accent: #818cf8;
-        --accent-2: #22d3ee;
-        --accent-text: #0d0f17;
+        --bg: #140c0d;
+        --surface: #1f1415;
+        --text: #f8eeee;
+        --muted: #b99a9c;
+        --border: #3a2325;
+        --accent: #f87171;
+        --accent-2: #fb7185;
+        --accent-text: #140c0d;
         --shadow: 0 10px 30px rgba(0, 0, 0, .4);
       }
     }
@@ -114,7 +114,9 @@
     .pdf-frame embed { display: block; width: 100%; height: 720px; border: 0; }
     .fallback { padding: 2rem; text-align: center; color: var(--muted); }
 
-    .note { color: var(--muted); font-size: .92rem; margin-top: 1rem; }
+    .video-wrap { position: relative; aspect-ratio: 16 / 9; background: #000; }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    #video { padding-top: 0; }
 
     footer { padding: 2.5rem 0 3rem; text-align: center; color: var(--muted); font-size: .88rem; }
 
@@ -132,6 +134,7 @@
       <div>
         <a class="link" href="#about">About</a>
         <a class="link" href="#document">Document</a>
+        <a class="link" href="#video">Video</a>
       </div>
     </div>
   </nav>
@@ -169,6 +172,28 @@
           Can't see the document?
           <a href="Resume_Glass_Victor_CE_20260910.pdf" target="_blank" rel="noopener">Open the PDF directly</a>.
           Some mobile browsers don't support embedded PDFs.
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>Featured Video</h2>
+            <p>Embedded from YouTube.</p>
+          </div>
+          <div class="actions">
+            <a href="https://www.youtube.com/watch?v=R8UKXO7zRT4" target="_blank" rel="noopener">Watch on YouTube &#8599;</a>
+          </div>
+        </div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/R8UKXO7zRT4"
+                  title="YouTube video player"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
         </div>
       </div>
     </section>
